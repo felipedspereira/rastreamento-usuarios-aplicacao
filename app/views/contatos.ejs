@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Desafio Rastreamento de Usuários</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <main role="main">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+            <span class=" navbar-brand text-white">Monitoramento de Usuários</span>
+        </nav>
+
+        <div class="jumbotron">
+            <h1 class="display-4 text-center mt-4">Usuários monitorados</h1>
+            <p class="text-center">Abaixo, a relação de usuários monitorados na aplicação
+                <strong>SaaS Enterprise</strong>
+            </p>
+            <div class="list-group">
+                <%for (let i = 0; i < users.length; i++) {%>
+                    <a class="list-group-item d-flex justify-content-between align-items-center" data-toggle="collapse" href="#collapseExample<%=i%>"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <%=users[i].email%>
+                        <span class="badge badge-primary badge-pill bg-danger">
+                            <%=users[i].activities.length%>
+                        </span>
+                    </a>
+                    <div class="collapse" id="collapseExample<%=i%>">
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Página acessada</th>
+                                    <th scope="col">Data/Hora</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for (let j = 0; j < users[i].activities.length; j++) {%>
+                                    <tr>
+                                        <td>
+                                            <%=users[i].activities[j].url%>
+                                        </td>
+                                        <td>
+                                            <%let data = new Date(users[i].activities[j].date)%>
+                                            <%=data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds()%>
+                                        </td>
+                                    </tr>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
