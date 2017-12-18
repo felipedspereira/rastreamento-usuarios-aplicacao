@@ -7,4 +7,4 @@ Just clone this repo, then inside the root folder, run the commands in the follo
 1) npm install
 2) npm run dev
 
-That's all. You can access your application in the following address: localhost:3000
+That's all. You can access this app in the following address: localhost:3000
