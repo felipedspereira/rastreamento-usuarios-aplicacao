@@ -1,6 +1,6 @@
 # rastreamento-usuarios-aplicacao
 
-This app monitors the users activities on the SaaS Enterprise site.
+This app receives the monitored data of the users activities in a website. An example of monitored website can be founded [here](https://github.com/felipedspereira/rastreamento-usuarios-site)
 
 ## Running the app in localhost enviroment
 Just clone this repo, then inside the root folder, run the commands in the following order:
