@@ -2,7 +2,7 @@
 
 This app receives the monitored data of the users activities in a website. An example of a monitored website can be founded [here](https://github.com/felipedspereira/rastreamento-usuarios-site)
 
-## Example
+## Live Example
 You can take a look in this app through the following url: https://rastreamento-usuarios-app.herokuapp.com/
 
 ## Running the app in localhost enviroment
